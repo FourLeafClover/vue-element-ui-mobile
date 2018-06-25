@@ -4,7 +4,8 @@ let configs = [{
         component: () =>
             import ('@/views/Home.vue'),
         meta: {
-            needAuth: false
+            needAuth: false,
+            index: 0
         }
     },
     {
@@ -13,7 +14,8 @@ let configs = [{
         component: () =>
             import ('@/views/About.vue'),
         meta: {
-            needAuth: true
+            needAuth: true,
+            index: 0
         }
     }, {
         path: '/login',
@@ -21,7 +23,8 @@ let configs = [{
         component: () =>
             import ('@/views/Login.vue'),
         meta: {
-            needAuth: false
+            needAuth: false,
+            index: 999
         }
     }
 ]
