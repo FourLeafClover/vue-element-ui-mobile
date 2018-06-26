@@ -41,7 +41,7 @@ UI 库使用 mint-ui: http://mint-ui.github.io/#!/zh-cn/
 
 /src/language 新增多语言支持. cn.js 和 en.js 默认都是语言配置
 
-新增gulp-ssh,用于拷贝文件到发布包
+新增gulp-ssh,用于拷贝文件到发布包.Gulpfile.js配置服务器地址
 
     let config = {
         version: '1.0.0',
