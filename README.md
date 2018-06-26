@@ -19,7 +19,7 @@ UI库使用mint-ui: http://mint-ui.github.io/#!/zh-cn/
             if (getCookie('vue.auth')) {
                 next();
             } else {
-            next(`/login?redirect=${to.fullPath}`)
+                next(`/login?redirect=${to.fullPath}`)
             }
         } else {
             next()
