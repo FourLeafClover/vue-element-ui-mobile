@@ -5,10 +5,11 @@ vue-element-ui-mobile
     npm install
     npm run start
     npm run build
+    npm run deploy
 
 基于 vue-cli@3.0: https://cli.vuejs.org/
 
-UI库使用mint-ui: http://mint-ui.github.io/#!/zh-cn/
+UI 库使用 mint-ui: http://mint-ui.github.io/#!/zh-cn/
 
 /src/utils 下提供了 http 请求,localstorage 存储,cookie 操作
 
@@ -38,4 +39,20 @@ UI库使用mint-ui: http://mint-ui.github.io/#!/zh-cn/
         cache: true // 页面是否缓存,不设置默认不缓存
     }
 
-/src/language 新增多语言支持. cn.js和en.js默认都是语言配置
+/src/language 新增多语言支持. cn.js 和 en.js 默认都是语言配置
+
+新增gulp-ssh,用于拷贝文件到发布包
+
+    let config = {
+        version: '1.0.0',
+        ssh: {
+            host: 'xxxx', //服务器ip地址
+            port: 22, //端口号
+            username: 'root', //用户名
+            password: 'xxxx' //密码
+        },
+        remoteDir: `/usr/local/xxx`, //部署路径
+        commands: [
+            `rm -rf ` //部署前需要执行的脚本。譬如重新发布后需要清空发布包之前的js和css
+        ]
+    };
