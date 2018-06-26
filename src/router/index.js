@@ -9,18 +9,14 @@ let routers = new Router({
 })
 
 routers.beforeEach((to, from, next) => {
-    let isJumpLogin = false;
     if (to.meta.needAuth) {
         if (getCookie('vue.auth')) {
-
+            next();
         } else {
-            isJumpLogin = true;
+            next(`/login?redirect=${to.fullPath}`)
         }
-    }
-    if (isJumpLogin) {
-        next(`/login?redirect=${to.fullPath}`)
     } else {
-        next();
+        next()
     }
 })
 
