@@ -5,7 +5,8 @@ let configs = [{
             import ('@/views/Home.vue'),
         meta: {
             needAuth: false,
-            index: 0
+            index: 0,
+            cache: true
         }
     },
     {
@@ -15,7 +16,8 @@ let configs = [{
             import ('@/views/About.vue'),
         meta: {
             needAuth: true,
-            index: 0
+            index: 2,
+            cache: false
         }
     }, {
         path: '/login',
@@ -24,7 +26,8 @@ let configs = [{
             import ('@/views/Login.vue'),
         meta: {
             needAuth: false,
-            index: 999
+            index: 999,
+            cache: true
         }
     }
 ]

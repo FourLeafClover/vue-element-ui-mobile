@@ -14,6 +14,9 @@
 
 <script>
 export default {
-  name: "home"
+  name: "home",
+  created() {
+    console.log("home page created!");
+  }
 };
 </script>

@@ -13,6 +13,9 @@
 import { setCookie } from "@/utils/$cookie";
 export default {
   name: "login",
+  created() {
+    console.log("login page created");
+  },
   methods: {
     login() {
       if (this.$refs.username.value && this.$refs.pwd.value) {

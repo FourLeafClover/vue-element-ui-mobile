@@ -1,7 +1,9 @@
 <template>
   <div id="app" >
-    <transition  :name="transitionName">   
-      <router-view></router-view>
+    <transition  :name="transitionName">
+      <keep-alive :exclude="exclude">
+          <router-view></router-view>
+      </keep-alive>   
     </transition>
   </div>
 </template>
@@ -10,11 +12,15 @@ export default {
   name: "App",
   data() {
     return {
-      transitionName: ""
+      transitionName: "",
+      exclude: ""
     };
   },
   watch: {
     $route(to, from) {
+      if (!to.meta.cache) {
+        this.$set(this.$data, "exclude", to.name);
+      }
       if (to.meta.index > from.meta.index) {
         this.$set(this.$data, "transitionName", "slide-left");
       } else if (to.meta.index < from.meta.index) {
