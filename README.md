@@ -37,3 +37,5 @@ UI库使用mint-ui: http://mint-ui.github.io/#!/zh-cn/
         index: 0, // 用于页面过渡动画,index从小跳转到大的页面,左滑动,从大到小右滑动,同级没有动画效果
         cache: true // 页面是否缓存,不设置默认不缓存
     }
+
+/src/language 新增多语言支持. cn.js和en.js默认都是语言配置
