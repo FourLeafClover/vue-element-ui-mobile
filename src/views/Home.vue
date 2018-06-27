@@ -17,17 +17,17 @@
 </template>
 
 <script>
-import { setItem } from "@/utils/$storage";
+import { setItem } from '@/utils/$storage'
 export default {
-  name: "home",
-  created() {},
+  name: 'home',
+  created () {},
   methods: {
-    lang(locale) {
-      setItem("vue.locale", locale);
-      this.$i18n.locale = locale;
+    lang (locale) {
+      setItem('vue.locale', locale)
+      this.$i18n.locale = locale
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 #lang {
@@ -41,5 +41,3 @@ export default {
   }
 }
 </style>
-
-

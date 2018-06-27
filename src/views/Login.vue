@@ -10,33 +10,33 @@
 </template>
 
 <script>
-import { setCookie } from "@/utils/$cookie";
+import { setCookie } from '@/utils/$cookie'
 export default {
-  name: "login",
-  created() {
-    console.log("login page created");
+  name: 'login',
+  created () {
+    console.log('login page created')
   },
   methods: {
-    login() {
+    login () {
       if (this.$refs.username.value && this.$refs.pwd.value) {
-        setCookie("vue.auth", "登录token");
+        setCookie('vue.auth', '登录token')
         this.$toast({
-          message: "登录成功",
-          iconClass: "icon icon-success"
-        });
+          message: '登录成功',
+          iconClass: 'icon icon-success'
+        })
         if (this.$route.query.redirect) {
-          this.$router.push(this.$route.query.redirect);
+          this.$router.push(this.$route.query.redirect)
         } else {
-          this.$router.push("/");
+          this.$router.push('/')
         }
       } else {
         this.$toast({
-          message: "请输入账号密码"
-        });
+          message: '请输入账号密码'
+        })
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

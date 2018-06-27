@@ -1,1 +1,1 @@
-export const Service_API = process.env.NODE_ENV === "deveploment" ? "" : "";
+export const SERVICE_API = process.env.NODE_ENV === 'deveploment' ? '' : ''

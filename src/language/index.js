@@ -2,17 +2,17 @@ import en from './en'
 import cn from './cn'
 import VueI18n from 'vue-i18n'
 import Vue from 'vue'
+import { getItem } from '@/utils/$storage'
 Vue.use(VueI18n)
-import { getItem } from '@/utils/$storage';
 
 const messages = {
-    en: en,
-    cn: cn
+  en: en,
+  cn: cn
 }
-let storeageLocale = getItem('vue.locale');
+let storeageLocale = getItem('vue.locale')
 const i18n = new VueI18n({
-    locale: storeageLocale ? storeageLocale : 'cn',
-    messages
+  locale: storeageLocale || 'cn',
+  messages
 })
 
-export default i18n;
+export default i18n

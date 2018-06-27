@@ -1,23 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-Vue.use(Router)
 import config from './router'
-import { getCookie } from '@/utils/$cookie';
-//import store from '@/store'
+import { getCookie } from '@/utils/$cookie'
+Vue.use(Router)
+// import store from '@/store'
 let routers = new Router({
-    routes: config
+  routes: config
 })
 
 routers.beforeEach((to, from, next) => {
-    if (to.meta.needAuth) {
-        if (getCookie('vue.auth')) {
-            next();
-        } else {
-            next(`/login?redirect=${to.fullPath}`)
-        }
+  if (to.meta.needAuth) {
+    if (getCookie('vue.auth')) {
+      next()
     } else {
-        next()
+      next(`/login?redirect=${to.fullPath}`)
     }
+  } else {
+    next()
+  }
 })
 
-export default routers;
+export default routers

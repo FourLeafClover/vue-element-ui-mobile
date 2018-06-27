@@ -11,10 +11,9 @@
 </template>
 <script>
 export default {
-  name: "about",
-  created() {
-    console.log("about page created!");
+  name: 'about',
+  created () {
+    console.log('about page created!')
   }
-};
+}
 </script>
-
