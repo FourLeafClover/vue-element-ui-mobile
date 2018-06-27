@@ -3,9 +3,10 @@ vue-mobile
 命令
 
     npm install
-    npm run start
-    npm run build
-    npm run deploy
+    npm run start  本地运行
+    npm run build  本地编译
+    npm run deploy 部署到服务器
+    npm run lint   eslint校验,并自动更正
 
 基于 vue-cli@3.0: https://cli.vuejs.org/
 
