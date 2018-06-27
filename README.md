@@ -9,7 +9,7 @@ vue-mobile
 
 基于 vue-cli@3.0: https://cli.vuejs.org/
 
-UI 库使用 mint-ui: http://mint-ui.github.io/#!/zh-cn/
+UI 库使用 vant: https://youzan.github.io/vant/#/zh-CN/intro/
 
 /src/utils 下提供了 http 请求,localstorage 存储,cookie 操作
 
@@ -40,6 +40,22 @@ UI 库使用 mint-ui: http://mint-ui.github.io/#!/zh-cn/
     }
 
 /src/language 新增多语言支持. cn.js 和 en.js 默认都是语言配置
+
+    export default {
+        App: {
+            Home: '首页',
+            About: '关于',
+            Back: '返回'
+        }
+    }
+
+    export default {
+        App: {
+            Home: 'Home',
+            About: 'About',
+            Back: 'Back'
+        }
+    }
 
 新增 gulp-ssh,用于拷贝文件到发布包.Gulpfile.js 配置服务器地址
 
