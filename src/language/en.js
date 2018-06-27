@@ -1,6 +1,7 @@
 export default {
     App: {
         Home: 'Home',
-        About: 'About'
+        About: 'About',
+        Back: 'Back'
     }
 }

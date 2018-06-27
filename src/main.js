@@ -3,10 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
-import mintui from 'mint-ui'
-import 'mint-ui/lib/style.css'
+import vant from 'vant'
+import 'vant/lib/vant-css/index.css';
 import i18n from './language'
-Vue.use(mintui);
+Vue.use(vant);
 Vue.config.productionTip = false
 let $vm = new Vue({
     router,

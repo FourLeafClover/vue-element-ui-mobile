@@ -1,12 +1,11 @@
 <template>
 <div>
     <div id="nav">
-        <router-link to="/">{{$t("App.Home")}}</router-link> |
-        <router-link to="/about">{{$t("App.About")}}</router-link>
+        <router-link to="/">{{$t("App.Back")}}</router-link>
     </div>
     <div class="home">
         <img src="../assets/logo.png">
-        <br/>关于网站
+        <br/>一个简单的Vue全家桶
     </div>
 </div>
 </template>

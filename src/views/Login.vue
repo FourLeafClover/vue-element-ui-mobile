@@ -1,12 +1,12 @@
 <template>
-  <div class="login">
+<div class="login">
     <img src="../assets/logo.png">
     <div>
-       <input ref="username" type="text" placeholder="用户名" > 
-       <input ref="pwd" type="password" placeholder="密码">  
+        <input ref="username" type="text" placeholder="用户名">
+        <input ref="pwd" type="password" placeholder="密码">
     </div>
-    <mt-button type="primary" @click="login">登录</mt-button>
-  </div>
+    <van-button type="primary" @click="login">登录</van-button>
+</div>
 </template>
 
 <script>
@@ -49,9 +49,9 @@ export default {
     padding: 0 10px;
     box-sizing: border-box;
   }
-  .mint-button {
-    float: right;
-  }
+}
+.van-button {
+  float: right;
+  margin-right: 20px;
 }
 </style>
-
