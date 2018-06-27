@@ -1,12 +1,13 @@
 <template>
-  <div id="app">
-    <transition :name="transitionName">
-      <keep-alive :exclude="exclude">
-        <router-view></router-view>
-      </keep-alive>
-    </transition>
-  </div>
+<div id="app">
+  <transition :name="transitionName">
+    <keep-alive :exclude="exclude">
+      <router-view class="router-view"></router-view>
+    </keep-alive>
+  </transition>
+</div>
 </template>
+
 <script>
 export default {
   name: 'App',
@@ -34,41 +35,45 @@ export default {
 </script>
 
 <style lang="scss">
-  .slide-right-enter-active,
-  .slide-right-leave-active,
-  .slide-left-enter-active,
-  .slide-left-leave-active {
-    will-change: transform;
-    transition: all 500ms;
-    position: absolute;
-  }
 
-  .slide-none-leave-active {
-    opacity: 0;
-    display: none;
-  }
+.router-view {
+  width: 100%;
+}
 
-  .slide-none-enter {
-    display: inline;
-  }
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: transform;
+  transition: all 500ms;
+  position: absolute;
+}
+.slide-none-leave-active {
+  opacity: 0;
+  display: none;
+}
 
-  .slide-right-enter {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
+.slide-none-enter {
+  display: inline;
+}
 
-  .slide-right-leave-active {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-  }
+.slide-right-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
 
-  .slide-left-enter {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-  }
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
 
-  .slide-left-leave-active {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
+.slide-left-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+.slide-left-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
 </style>
