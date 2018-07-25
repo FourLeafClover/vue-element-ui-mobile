@@ -30,7 +30,7 @@ UI 库使用 vant: https://youzan.github.io/vant/#/zh-CN/intro/
 
 通过配置路由 meta index 实现页面过渡动画。相同的直接跳转，index 高的就左切换
 
-动态设置页面缓存
+动态设置页面缓存。如果存在循环页面动画,无法通过index来实现的,请前往的CnblogApp项目,我用vuex实现了一个。但是Vuex实现的在浏览器中访问的时候,浏览器的返回按钮无法支持动画效果了。只能通过页面按钮调用goBack方法实现动画效果
 
 /src/router/router.js 配置路由,实现方案请查看 App.vue。通过 watch router 变化实现的.
 
