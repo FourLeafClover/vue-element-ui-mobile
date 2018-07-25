@@ -8,8 +8,10 @@ export function getItem (key) {
       return Number(dataObj.data)
     } else if (dataObj.type === 'object') {
       return JSON.parse(dataObj.data)
+    } else if (dataObj.type === 'boolean') {
+      return Boolean(dataObj.data)
     } else {
-      return null
+      return dataObj.data
     }
   } else {
     return null
@@ -21,21 +23,25 @@ export function setItem (key, value) {
     type: '',
     data: null
   }
-  if (typeof (key) === 'string') {
+  if (typeof (value) === 'string') {
     data.type = 'string'
     data.data = value
-  } else if (typeof (key) === 'number') {
+  } else if (typeof (value) === 'number') {
     data.type = 'number'
     data.data = value
-  } else if (typeof (key) === 'object') {
+  } else if (typeof (value) === 'object') {
     data.type = 'object'
     data.data = JSON.stringify(value)
+  } else if (typeof (value) === 'boolean') {
+    data.type = 'boolean'
+    data.data = value ? 1 : 0
   } else {
-    console.error('暂时只支持string,number,object对象')
+    data.type = 'unknow'
+    data.data = value
   }
   window.localStorage.setItem(key, JSON.stringify(data))
 }
 
 export function clearItem (key) {
-  window.localStorage.setItem(key, '')
+  window.localStorage.removeItem(key)
 }

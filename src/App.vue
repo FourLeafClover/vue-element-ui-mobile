@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <transition :name="transitionName">
-    <keep-alive :exclude="exclude">
+    <keep-alive :include="include">
       <router-view class="router-view"></router-view>
     </keep-alive>
   </transition>
@@ -9,25 +9,24 @@
 </template>
 
 <script>
+import routerConfig from '@/router/router'
+const cacheRouter = routerConfig.filter(x => x.meta.cache).map(x => x.name)
 export default {
   name: 'App',
   data () {
     return {
       transitionName: '',
-      exclude: ''
+      include: cacheRouter.length > 0 ? cacheRouter.join(',') : ''
     }
   },
   watch: {
     $route (to, from) {
-      if (!to.meta.cache) {
-        this.$set(this.$data, 'exclude', to.name)
-      }
       if (to.meta.index > from.meta.index) {
-        this.$set(this.$data, 'transitionName', 'slide-left')
+        this.transitionName = 'slide-left'
       } else if (to.meta.index < from.meta.index) {
-        this.$set(this.$data, 'transitionName', 'slide-right')
+        this.transitionName = 'slide-right'
       } else {
-        this.$set(this.$data, 'transitionName', 'slide-none')
+        this.transitionName = 'slide-none'
       }
     }
   }
@@ -35,7 +34,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .router-view {
   width: 100%;
 }
@@ -45,9 +43,10 @@ export default {
 .slide-left-enter-active,
 .slide-left-leave-active {
   will-change: transform;
-  transition: all 500ms;
+  transition: all 200ms;
   position: absolute;
 }
+
 .slide-none-leave-active {
   opacity: 0;
   display: none;
